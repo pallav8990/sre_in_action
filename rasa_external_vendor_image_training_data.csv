@@ -1,0 +1,116 @@
+training_example
+I want to download an image from DockerHub.
+I want to use an external image.
+I want to get an image from my vendor.
+How to pull an image from an external registry?
+Can I use an image from an external repository?
+How do I onboard a vendor image?
+What is the process to use external images?
+How can I pull an image from an external registry?
+I need to fetch an image from my vendor.
+How do I import an image from DockerHub?
+Is it possible to use a third-party container image?
+What is the procedure to bring in an external image?
+Can I use an image from a public registry?
+How do I verify an external container image?
+What steps are required to onboard a vendor image?
+Help me pull an image from an external repository.
+I want to use a vendor-provided container image.
+How to approve an external container image?
+What are the security checks for external images?
+Can I use a pre-built image from an external vendor?
+How do I get approval for a third-party image?
+What are the guidelines for onboarding vendor images?
+How can I download an image from Quay.io?
+Can I pull an image from Google Container Registry?
+I need to retrieve an image from an external registry.
+Is it allowed to use external container images?
+How do I check if an external image is approved?
+What are the best practices for using vendor images?
+How do I register an external image for onboarding?
+Can I onboard an image from GitHub Container Registry?
+What are the compliance requirements for external images?
+How do I import an external image into our infrastructure?
+I need to use an image from my software vendor.
+How do I get a third-party container image approved?
+What is the approval process for onboarding external images?
+Can I use images from Red Hat Container Catalog?
+What steps do I need to take to use an external image?
+How do I scan an external image for vulnerabilities?
+What registries are allowed for external image onboarding?
+I want to onboard an image from a third-party registry.
+Can I bring an image from AWS ECR?
+How do I configure external image access?
+I want to use a vendor image in my environment.
+Is it safe to use an external container image?
+How do I integrate a third-party image into my infrastructure?
+Can I pull an image from JFrog Artifactory?
+How do I whitelist an external container image?
+What are the policies for using vendor-provided images?
+How can I verify the authenticity of an external image?
+What is the security review process for onboarding images?
+Can I store a vendor image in my private registry?
+How do I push an external image into my internal registry?
+What container image sources are trusted?
+How do I check the license for an external image?
+I need approval to use a vendor image.
+Can I use an image from Bitnami?
+How do I pull an image from an external OCI registry?
+How do I check the signing details of an external image?
+How do I verify the source of an external image?
+What are the risks of using an image from an external vendor?
+How do I scan an image from DockerHub?
+I want to download an image from an external private registry.
+How do I request an exception for using an external image?
+What security tools can I use to scan an external image?
+How do I ensure an external image is compliant?
+Can I directly pull an image from a third-party repository?
+What registry credentials do I need to access vendor images?
+How do I test a vendor image before onboarding it?
+What are the verification steps for using external images?
+Can I modify an external image before using it?
+How do I convert an external image to a trusted format?
+What is the approval process for external container images?
+How do I check the vulnerabilities of a vendor image?
+How do I get access to external container images?
+What security policies apply to external images?
+How do I request permission to use an external image?
+Can I scan an external image in our security pipeline?
+How do I validate the security of an external image?
+What container registries are allowed for onboarding?
+How do I get a vendor image whitelisted?
+Can I fetch an image from IBM Container Registry?
+How do I check if an external image has a known CVE?
+Can I pull images from private vendor repositories?
+What are the risks of using a container image from an external source?
+How do I transfer an external image to our infrastructure?
+What security controls should be applied to vendor images?
+How do I ensure an external image meets our compliance policies?
+Can I store a vendor image in my internal OpenShift registry?
+What are the validation requirements for onboarding images?
+How do I configure access to an external container registry?
+What is the recommended process for using vendor images?
+How do I get support for onboarding a vendor image?
+What is the best way to test a third-party container image?
+How do I verify the integrity of an external image?
+What is the process to import an image from an external vendor?
+Can I host an external image in our local container registry?
+How do I maintain security when using external images?
+What registry should I use for vendor container images?
+Can I deploy an image from a third-party provider?
+What are the security best practices for onboarding images?
+How do I enable access to a vendor-provided image?
+How do I fetch an external image while maintaining security compliance?
+Can I pull a vendor image without authentication?
+How do I validate the SHA256 checksum of an external image?
+What security controls are required for vendor image onboarding?
+How do I push a vendor image to our internal OpenShift registry?
+What are the security scanning requirements for third-party images?
+Can I use an external image without scanning it first?
+How do I test a vendor container image before approval?
+What is the policy for storing vendor images in our infrastructure?
+How do I handle licensing concerns with external images?
+What are the image signing requirements for onboarding vendor images?
+Can I modify a vendor image before deploying it?
+How do I confirm if an external image is trustworthy?
+What are the storage limitations for external vendor images?
