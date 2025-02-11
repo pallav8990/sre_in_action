@@ -96,3 +96,15 @@ This project aims to redefine SRE operations by creating a stateless, API-first 
 	•	Designed to adapt and integrate with new observability and automation tools as the platform evolves.
 	•	Uses a modular architecture, allowing easy expansion and enhancement without disrupting existing workflows.
 	•	Ensures long-term maintainability by adhering to industry-standard best practices for API scalability and interoperability.
+
+usecase:
+| Use Case                                          | Interested Teams         | Before API                                                | After API                                               | Potential Benefit                                      |
+|--------------------------------------------------|-------------------------|----------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------|
+| Unified Observability Across HCCP               | SRE, Ops, Users         | Manually logs into multiple tools, different query languages, manual correlation | Single API query fetches logs, metrics, errors across platforms | Reduces tool sprawl, simplifies troubleshooting, accelerates RCA |
+| Automated Remediation for Failed Deployments    | SRE, Ops                | Manually checks logs, restarts pods, reattempts deployment | API detects failures, correlates logs, triggers auto-remediation | Cuts MTTR, minimizes manual intervention, prevents downtime |
+| Advanced Anomaly Detection                      | SRE, Ops                | Monitors different tools separately, delayed detection | API correlates metrics, detects anomalies, triggers scaling | Proactive issue resolution, improves uptime, optimizes scaling |
+| Self-Service Troubleshooting via Virtual Assistant | Users, SRE            | Logs into OpenShift, Splunk, Prometheus separately | Asks chatbot for app status, receives correlated insights | Faster issue resolution, reduces dependence on Ops |
+| Cross-Platform Compliance Reporting             | Audit, Management       | Manually extracts logs, spends hours aggregating data | Single API generates automated compliance report | Saves time, improves accuracy, ensures regulatory compliance |
+| Parallel Execution for High-Performance Queries | SRE, Ops, Users         | Separate API calls create bottlenecks, slow dashboard | API fetches data in parallel, improves response time | Enhances dashboard performance, scales efficiently |
+| Unified Query Interface                         | SRE, Ops, Users         | Different query languages for JFrog, OpenShift, ATAAS | One API query fetches normalized data from all tools | Simplifies multi-tool interactions, faster analysis |
+| Scalable & Future-Proof Integration             | Management, SRE         | Custom API integrations needed for every new tool | New tools onboarded with minimal changes via API adapter | Future-proof, seamless integrations, reduces dev effort |
