@@ -1,0 +1,99 @@
+Section 1 – General Cleanup Queries
+	1.	How do I clean up old Docker images in JFrog?
+	2.	I need to delete old images from Artifactory.
+	3.	Can you clean up my Docker images in JFrog?
+	4.	What’s the process for removing old images in JFrog?
+	5.	How can I automate Docker image cleanup in Artifactory?
+	6.	I want to free up space by deleting old images.
+	7.	How do I purge outdated Docker images from Artifactory?
+	8.	Can you help me with image cleanup in JFrog?
+	9.	How can I clean images older than a week in JFrog?
+	10.	What is the best way to remove unused Docker images?
+Section 2 – Dry Run Requests
+	11.	Can you perform a dry run for image cleanup?
+	12.	I need a dry run before deleting images.
+	13.	How do I simulate Docker image deletion?
+	14.	Can you show me the images that will be deleted?
+	15.	I want to preview the images to be deleted.
+	16.	Can I get a dry run output before final cleanup?
+	17.	How do I ensure no critical images are deleted?
+	18.	Can you run a dry run cleanup for my repository?
+	19.	Show me the results of a dry run cleanup.
+	20.	How do I validate dry run cleanup results?
+Section 3 – Images Older Than 7 Days
+	21.	How do I remove images older than 7 days?
+	22.	Can you delete images older than a week?
+	23.	I want to clean up images older than 7 days.
+	24.	What is the policy for images older than 7 days?
+	25.	Can we automate deletion of images older than a week?
+	26.	Show me all Docker images older than 7 days.
+	27.	Are images older than 7 days automatically deleted?
+	28.	How do I check for images older than 7 days?
+	29.	Can I exclude certain images from 7-day cleanup?
+	30.	Will images older than 7 days be deleted immediately?
+Section 4 – Checking Image Retention Policies
+	31.	What is the Docker image retention policy in JFrog?
+	32.	Can you explain the image cleanup policy?
+	33.	How long are images retained in Artifactory?
+	34.	When are old Docker images deleted?
+	35.	Can I extend image retention beyond 7 days?
+	36.	Is there a way to keep specific images permanently?
+	37.	How do I know which images will be deleted?
+	38.	Can I customize the 7-day retention policy?
+	39.	Are there exceptions to the image cleanup rule?
+	40.	Who approves Docker image deletions?
+Section 5 – Image Deletion Requests
+	41.	Can you delete all unused images from my repository?
+	42.	I need to remove Docker images older than 7 days.
+	43.	Please clean up all images that are no longer needed.
+	44.	How do I remove stale Docker images in JFrog?
+	45.	Delete outdated images from my repository.
+	46.	Can you clear old images after a dry run check?
+	47.	I want to delete images from the dev environment.
+	48.	How do I clean Docker tags older than a week?
+	49.	Remove images in JFrog that are older than 7 days.
+	50.	Can you initiate image cleanup for my project?
+Section 7 – Repository-Specific Cleanup
+	61.	Can you clean up images from my dev repository?
+	62.	I need to delete images in the production repo.
+	63.	How do I perform cleanup for a specific Docker repo?
+	64.	Can you clean up only the staging repository?
+	65.	How do I target a single repository for image deletion?
+	66.	Clean up images in my feature branch repository.
+	67.	Remove old images from the testing environment.
+	68.	Can you exclude production images from cleanup?
+	69.	How do I check image age in a particular repository?
+	70.	Is the 7-day rule applicable to all repositories?
+Section 8 – Excluding Images from Cleanup
+	71.	Can I protect certain images from being deleted?
+	72.	How do I prevent base images from cleanup?
+	73.	I want to keep the latest images and delete the rest.
+	74.	Can we skip deleting tagged images?
+	75.	How do I retain specific versions in JFrog?
+	76.	Can I whitelist critical Docker images?
+	77.	How do I exclude images with “latest” tag from deletion?
+	78.	Is it possible to skip images in active use?
+	79.	How do I ensure release versions are not cleaned up?
+	80.	Can you bypass image cleanup for a particular project?
+Section 9 – Checking Cleanup Status
+	81.	How do I check the status of image cleanup?
+	82.	Was the last image cleanup successful?
+	83.	Can you show me the images deleted in the last cleanup?
+	84.	How do I know if my images were deleted?
+	85.	When was the last cleanup performed in JFrog?
+	86.	Can I view cleanup logs for my repository?
+	87.	How do I get a summary of image deletion?
+	88.	Can I review the images deleted after the dry run?
+	89.	Is there a report on Docker image cleanup activities?
+	90.	What happens after a dry run in JFrog cleanup?
+Conversational & Variations
+	101.	I need help cleaning old images.
+	102.	Can we run a dry run before image deletion?
+	103.	Please delete images older than 7 days after a dry run.
+	104.	Show me the list of images set for cleanup.
+	105.	I want to confirm the images that will be deleted.
+	106.	Can you start a cleanup job for my repo?
+	107.	What’s the standard image cleanup cycle?
+	108.	Do we delete unused images automatically?
+	109.	Can I stop an image cleanup process?
+	110.	I’m worried about losing critical images—can you check?
