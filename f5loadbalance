@@ -1,0 +1,110 @@
+Section 1 – Requesting Virtual IP (VIP)
+	1.	How can I request a virtual IP for my application?
+	2.	I need a VIP for my app deployment.
+	3.	Can you help me get a virtual IP?
+	4.	What is the process for assigning a virtual IP?
+	5.	I want a new virtual IP for my service.
+	6.	How do I get a VIP assigned?
+	7.	Can you allocate a virtual IP to my application?
+	8.	How do I obtain a VIP for my namespace?
+	9.	Requesting a virtual IP for production deployment.
+	10.	I need a virtual IP for my backend service.
+	11.	How do I map a virtual IP to my service?
+	12.	Can I get a virtual IP for my application in staging?
+	13.	How do I bind a virtual IP to my pod?
+	14.	Is there a process to reserve a VIP for my app?
+	15.	Need help with VIP allocation for a multi-tier application.
+	16.	I want to reserve a virtual IP for my microservice.
+	17.	Can you explain the virtual IP assignment process?
+	18.	Who can approve a VIP allocation request?
+	19.	How long does it take to get a virtual IP assigned?
+	20.	I need to expose my service with a virtual IP.
+
+ Section 2 – F5 Wide IP Setup
+	21.	How do I request an F5 Wide IP for my service?
+	22.	Can you help me configure an F5 Wide IP?
+	23.	I need an F5 Wide IP for my application.
+	24.	What is the procedure for setting up F5 Wide IP?
+	25.	Who handles F5 Wide IP requests?
+	26.	How do I configure my app with an F5 Wide IP?
+	27.	Requesting F5 Wide IP for high availability setup.
+	28.	Can I get an F5 Wide IP assigned for DR setup?
+	29.	How is traffic routed through F5 Wide IP?
+	30.	I need an F5 Wide IP for multi-region failover.
+	31.	How do I link my virtual IP to an F5 Wide IP?
+	32.	Can you explain the difference between VIP and F5 Wide IP?
+	33.	What’s the process for DNS registration with F5 Wide IP?
+	34.	Can you map my app’s backend pool to an F5 Wide IP?
+	35.	I want to balance traffic across data centers with F5 Wide IP.
+	36.	Is F5 Wide IP mandatory for production apps?
+	37.	How do I update my F5 Wide IP pool members?
+	38.	Can I use F5 Wide IP for global load balancing?
+	39.	Who approves F5 Wide IP configuration changes?
+	40.	How do I monitor traffic through my F5 Wide IP?
+
+ Section 3 – Load Balancer IP Allocation
+	41.	How do I request a load balancer IP?
+	42.	I need a LoadBalancer IP for my service.
+	43.	Can you allocate a public LoadBalancer IP?
+	44.	How do I expose my app via a load balancer?
+	45.	What is the process to reserve a LoadBalancer IP?
+	46.	Can I get a LoadBalancer IP for an internal service?
+	47.	How do I check the status of my LoadBalancer IP request?
+	48.	Need a load balancer IP for production deployment.
+	49.	Can you help me configure load balancing for my app?
+	50.	How do I request a dedicated LoadBalancer IP?
+	51.	Who manages LoadBalancer IP assignments?
+	52.	What’s the difference between VIP and LoadBalancer IP?
+	53.	How do I map a LoadBalancer IP to my namespace?
+	54.	Can you assign a LoadBalancer IP to my ingress?
+	55.	Is there a quota for LoadBalancer IPs?
+	56.	How do I update my LoadBalancer IP settings?
+	57.	Can I move my app to a different LoadBalancer IP?
+	58.	Requesting LoadBalancer IP for DR setup.
+	59.	How do I secure my LoadBalancer IP?
+	60.	Can I use a LoadBalancer IP with TLS termination?
+
+ Section 5 – Multi-AZ (Availability Zone) Deployment
+	81.	How do I deploy my app across multiple AZs?
+	82.	What is the process for multi-AZ deployment?
+	83.	Can you help me configure my app for multi-AZ support?
+	84.	I need my application to be available in multiple AZs.
+	85.	How do I ensure high availability across AZs?
+	86.	Can I deploy my microservice in multiple zones?
+	87.	What are the best practices for multi-AZ deployment?
+	88.	How do I request resources across multiple AZs?
+	89.	Is there an auto-scaling policy for multi-AZ setups?
+	90.	Can I configure my LoadBalancer IP for multi-AZ traffic?
+	91.	How does failover work across AZs?
+	92.	What is the cost implication of multi-AZ deployment?
+	93.	Can you review my multi-AZ deployment architecture?
+	94.	How do I split traffic between AZs?
+	95.	Is F5 Wide IP required for multi-AZ failover?
+	96.	How do I monitor health checks across AZs?
+	97.	Can I migrate my app from a single AZ to multi-AZ?
+	98.	How do I validate my multi-AZ deployment is working?
+	99.	What happens if one AZ goes down?
+	100.	Can you share an example of a multi-AZ deployment?
+
+ 	101.	Can I get a VIP and LoadBalancer IP for multi-AZ deployment?
+	102.	How do I configure F5 Wide IP with FDNS for multi-region failover?
+	103.	What’s the best approach for multi-AZ deployment with F5 Wide IP?
+	104.	Can I request an FDNS along with a LoadBalancer IP?
+	105.	How do I set up traffic splitting between AZs using F5 Wide IP?
+	106.	Can my FDNS point to multiple VIPs across AZs?
+	107.	I need a complete setup: VIP, FDNS, F5 Wide IP, and multi-AZ deployment.
+	108.	How do I achieve blue-green deployment with multi-AZ and F5 Wide IP?
+	109.	Can you provide a sample YAML for multi-AZ deployment with a LoadBalancer IP?
+	110.	What’s the ideal setup for disaster recovery using multi-AZ and VIP?
+
+ Fast DNS (FDNS) Related Queries (Corrected)
+	1.	How do I request a Fast DNS (FDNS) entry for my app?
+	2.	I need an FDNS record for my application.
+	3.	Can you help me create a Fast DNS entry?
+	4.	What is the process for getting an FDNS configured?
+	5.	How do I map my Load Balancer IP to an FDNS?
+	6.	I want an FDNS for my production app.
+	7.	Who handles FDNS registrations?
+	8.	How long does it take to activate an FDNS?
+	9.	Can I point my virtual IP to an FDNS?
+	10.	What’s the difference between FDNS and normal DNS?
