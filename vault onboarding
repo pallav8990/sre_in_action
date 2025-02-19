@@ -1,0 +1,134 @@
+Section 1 – Onboarding to Vault / Getting Started
+	1.	How do I onboard my application to Vault?
+	2.	What is the process to onboard to HashiCorp Vault?
+	3.	How do I start using Vault for my application?
+	4.	What are the prerequisites for onboarding to Vault?
+	5.	Can you guide me through Vault onboarding?
+	6.	How do I set up my app with Vault for secrets management?
+	7.	Who can approve my Vault onboarding request?
+	8.	Is there a checklist for Vault onboarding?
+	9.	What permissions do I need to access Vault?
+	10.	How long does Vault onboarding take?
+  Section 2 – Secrets Setup & Configuration
+	11.	How do I create a new secret in Vault?
+	12.	How do I store application credentials in Vault?
+	13.	What is the correct path to store secrets in Vault?
+	14.	Can I organize secrets in folders within Vault?
+	15.	How do I update a secret in Vault?
+	16.	What is the best way to structure secrets in Vault?
+	17.	How do I retrieve a secret from Vault?
+	18.	Can I store multiple secrets under one path?
+	19.	How do I version my secrets in Vault?
+	20.	How can I access secrets from my container application?
+    Section 3 – Secret Sync Agent Setup
+	21.	How do I install the Vault secret sync agent in my container?
+	22.	What is the purpose of the secret sync agent?
+	23.	How do I configure the Vault sync agent for my app?
+	24.	Can I automate secrets fetching using the sync agent?
+	25.	How do I verify if the secret sync agent is working?
+	26.	What permissions does the Vault agent need?
+	27.	How do I troubleshoot the Vault sync agent?
+	28.	Is the secret sync agent mandatory for onboarding?
+	29.	Can I deploy the Vault agent as a sidecar in my pod?
+	30.	How do I upgrade the Vault sync agent?
+    Section 4 – ConfigMap Integration
+	31.	How do I create a ConfigMap with Vault secrets?
+	32.	Can secrets from Vault be mounted as a ConfigMap?
+	33.	How do I map Vault secrets into Kubernetes ConfigMaps?
+	34.	What is the best practice for ConfigMaps with Vault?
+	35.	How do I update my ConfigMap when secrets change?
+	36.	Can ConfigMaps and secrets from Vault sync automatically?
+	37.	Is there a sample ConfigMap template for Vault secrets?
+	38.	How do I rotate secrets in my ConfigMap from Vault?
+	39.	Can I combine Vault secrets and standard ConfigMaps?
+	40.	How do I use Vault secrets in environment variables via ConfigMap?
+    Section 5 – Password Expiry & Rotation
+	41.	How do I set password expiry in Vault?
+	42.	Can Vault automatically rotate secrets?
+	43.	How often should I rotate secrets in Vault?
+	44.	How do I get notified when a secret expires?
+	45.	Can I customize password expiry policies in Vault?
+	46.	What happens when a secret in Vault expires?
+	47.	How do I update expired secrets in Vault?
+	48.	How do I configure dynamic secrets with auto-expiry?
+	49.	How do I enable secret leasing in Vault?
+	50.	Can Vault rotate database passwords automatically?
+
+    Section 6 – Namespaces & Application Integration
+	51.	How do I integrate Vault with my application namespace?
+	52.	Can I restrict Vault access to a specific namespace?
+	53.	How do I link my application to Vault secrets?
+	54.	What is the best way to inject secrets into my namespace?
+	55.	Can Vault be namespace-scoped in Kubernetes?
+	56.	How do I allow Vault access only for my app?
+	57.	Can I onboard multiple namespaces to Vault at once?
+	58.	How do I configure a service account for Vault access?
+	59.	What is the correct RBAC setup for Vault and my namespace?
+	60.	Can I onboard my entire team to Vault?
+
+    Section 7 – Authentication & Access Control
+	61.	How do I authenticate my app with Vault?
+	62.	What are the supported authentication methods in Vault?
+	63.	Can I use Kubernetes authentication with Vault?
+	64.	How do I set up an AppRole in Vault?
+	65.	What is the difference between Token and AppRole authentication?
+	66.	How do I enable Kubernetes service account authentication in Vault?
+	67.	How do I limit my app’s access to certain secrets?
+	68.	Can I create read-only access for my team in Vault?
+	69.	How do I revoke access to Vault?
+	70.	How do I audit Vault access logs?
+    Section 8 – Vault Policies
+	71.	How do I create a Vault policy for my application?
+	72.	What is the default policy in Vault?
+	73.	Can I restrict access to certain secrets using policies?
+	74.	How do I update my Vault policy?
+	75.	Can policies be namespace-specific in Vault?
+	76.	How do I assign policies to Vault tokens?
+	77.	How do I check which policies my app has in Vault?
+	78.	What is the least-privilege policy for Vault?
+	79.	How do I review existing Vault policies?
+	80.	Can I create policies for dynamic secrets?
+    Section 9 – Vault Basics / Conceptual Questions
+	81.	What is HashiCorp Vault?
+	82.	How does Vault manage secrets?
+	83.	What is the difference between a secret and a key-value pair in Vault?
+	84.	How is Vault different from Kubernetes secrets?
+	85.	What is secret leasing in Vault?
+	86.	Can Vault encrypt secrets at rest?
+	87.	What is the Vault agent?
+	88.	How does dynamic secrets work in Vault?
+	89.	Is Vault open source?
+	90.	How does Vault ensure high availability?
+    Section 10 – Common Vault Issues
+	91.	Why is my Vault agent failing to fetch secrets?
+	92.	My app is not able to access Vault. What could be wrong?
+	93.	How do I check the health of my Vault cluster?
+	94.	What should I do if Vault is sealed?
+	95.	How do I troubleshoot “permission denied” errors in Vault?
+	96.	Secrets are not updating in my ConfigMap. How do I fix it?
+	97.	My password rotation is failing. What should I check?
+	98.	Vault agent pod is crashing. What should I do?
+	99.	I get an authentication error in Vault. How do I resolve it?
+	100.	Secrets are not syncing from Vault to my application. Why?
+    Extra Variations & Conversational Forms
+	101.	I need to set up Vault for my container app. How do I start?
+	102.	Can you help me configure Vault secrets sync?
+	103.	What’s the process for getting secrets from Vault into my app?
+	104.	How do I link my Kubernetes service account to Vault?
+	105.	What’s the best way to rotate secrets in Vault?
+	106.	How does Vault password expiry work?
+	107.	I need to integrate my pod with Vault secrets. How do I do that?
+	108.	Can Vault auto-renew credentials for my app?
+	109.	How do I inject Vault secrets into my container environment?
+	110.	What’s the policy setup process for Vault access?
+    Combination Queries (Combining Key Topics)
+	111.	How do I set up Vault, agent sync, and ConfigMap for secrets?
+	112.	Can you explain Vault onboarding along with password expiry setup?
+	113.	How do I automate secrets rotation and sync in Vault?
+	114.	What’s the full process for Vault onboarding and namespace linking?
+	115.	How do I authenticate my app with Vault and set password rotation?
+	116.	Can Vault sync secrets to ConfigMap and also handle expiry?
+	117.	What is the secure way to link Vault secrets to a pod’s environment?
+	118.	How do I combine AppRole authentication with secrets sync?
+	119.	Can I rotate Vault secrets and automatically update my ConfigMap?
+	120.	How do I onboard my namespace and link Vault to my deployment?
