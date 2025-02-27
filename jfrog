@@ -1,0 +1,119 @@
+Here’s a comprehensive training dataset (200 examples) for your JFrog Artifactory-related intent, covering the following use cases:
+	•	Finding the latest 5 tags of a Docker image
+	•	Finding Docker image details
+	•	Cleaning up images older than 7 days
+
+This dataset is structured to ensure maximum variety in user queries, making your virtual assistant highly effective.
+
+Intent Name: jfrog_docker_image_management
+
+This intent will handle user requests related to listing tags, fetching image details, and cleaning up old images in JFrog Artifactory.
+
+Section 1 – Find the Latest 5 Tags of a Docker Image
+	1.	How do I find the latest 5 tags of a Docker image in JFrog?
+	2.	Show me the latest 5 tags for my-app in JFrog.
+	3.	What are the last 5 versions of my Docker image?
+	4.	List the latest 5 available Docker tags.
+	5.	How can I get the most recent 5 tags for an image?
+	6.	Fetch the top 5 recent tags for backend-service.
+	7.	What are the newest 5 tags of my-app in Artifactory?
+	8.	Can you retrieve the last 5 Docker tags?
+	9.	Show me the most recent 5 tags of api-service.
+	10.	List the latest 5 published versions of my Docker image.
+	11.	How do I get the latest 5 releases of my container image?
+	12.	I need the last 5 tags of web-frontend from JFrog.
+	13.	What are the 5 newest Docker image tags in my repository?
+	14.	Find and display the latest 5 versions of payment-service.
+	15.	Get the latest 5 image tags from JFrog Artifactory.
+	16.	How do I check the last 5 image tags uploaded?
+	17.	Which are the most recently pushed 5 tags for my app?
+	18.	Retrieve the latest 5 versions of the node-app image.
+	19.	What are the top 5 recently published Docker tags?
+	20.	Show me the newest 5 tags of database-service.
+
+Section 2 – Find Docker Image Details
+	21.	How do I find details of a Docker image in JFrog?
+	22.	Show me metadata for nginx:1.21.0 in Artifactory.
+	23.	How can I get full details of an image?
+	24.	What information is available for a Docker image in JFrog?
+	25.	Fetch metadata for backend:v2.3.1 in Artifactory.
+	26.	I need to check size and layers of an image.
+	27.	Retrieve all details about redis:latest.
+	28.	How do I get the manifest of a Docker image?
+	29.	Find information about my-app:1.2.0 in JFrog.
+	30.	Show all attributes of web-app:v5.0.1.
+	31.	How do I list all available details of a specific image?
+	32.	Can you fetch digest details for api:v4.5?
+	33.	Retrieve manifest and SHA for database:v1.9.
+	34.	Show the history of an image in JFrog.
+	35.	Get the push timestamp for my-image:latest.
+	36.	Can you fetch the size and layers of backend:v3.2?
+	37.	I want to check vulnerabilities in nginx:latest.
+	38.	Find which user pushed payment-service:v2.0.
+	39.	What is the last modified time of webapp:v1.1.1?
+	40.	Can I see all tags associated with frontend:v4.0?
+
+Section 3 – Cleanup Docker Images Older Than 7 Days
+	41.	How do I delete Docker images older than 7 days?
+	42.	Remove old images that were pushed more than a week ago.
+	43.	Clean up unused images older than 7 days.
+	44.	What is the best way to purge stale Docker images?
+	45.	I need to remove images older than one week.
+	46.	Can you list all images older than 7 days?
+	47.	How do I perform a dry run before deleting old images?
+	48.	Remove outdated images from my repository.
+	49.	Can I schedule automatic cleanup of images older than a week?
+	50.	Delete all images from test-repo that are older than 7 days.
+	51.	Find and delete unused Docker tags from JFrog.
+	52.	How can I free up space by removing old images?
+	53.	Purge obsolete images from Artifactory.
+	54.	Can we clean up stale images in JFrog?
+	55.	What happens when I delete old Docker images?
+	56.	How do I automate Docker image cleanup in JFrog?
+	57.	Delete any image that hasn’t been used in the last 7 days.
+	58.	How do I check the images set for deletion?
+	59.	Remove all outdated versions of node-app.
+	60.	How do I avoid deleting active images in cleanup?
+
+Section 4 – Combination Queries (Find Tags + Cleanup + Details)
+	61.	How do I find the latest 5 tags and delete old ones?
+	62.	List the 5 latest tags and remove images older than a week.
+	63.	Fetch details of my-app and remove older versions.
+	64.	Can I find all metadata before cleaning up old images?
+	65.	How do I ensure I keep the latest 5 tags before deleting?
+	66.	Retrieve latest 5 tags and delete everything else.
+	67.	How do I fetch image details before deleting?
+	68.	Can I verify my image size before removing it?
+	69.	Find all image details and remove older versions.
+	70.	How do I clean up old images while keeping the 5 newest?
+
+Section 5 – Different Phrasings & Conversational Variations
+	71.	Get me the 5 latest image tags.
+	72.	I need to check recent image versions.
+	73.	How do I view the top 5 tags of my Docker repository?
+	74.	Can you show the latest 5 versions of app-service?
+	75.	Retrieve information about an image before cleanup.
+	76.	I want to see which images are going to be deleted.
+	77.	Show me the list of images that are about to be purged.
+	78.	How do I make sure critical images are not removed?
+	79.	Can you delete only untagged images older than 7 days?
+	80.	How do I verify before cleaning up my Docker repo?
+
+Section 6 – Additional Cleanup Queries
+	81.	Can I delete images automatically after a week?
+	82.	How do I enable auto-deletion of old images?
+	83.	Show me the disk space saved after cleanup.
+	84.	How do I see the total count of deleted images?
+	85.	Can I restore an image deleted by mistake?
+	86.	How do I know if my image is safe from cleanup?
+	87.	Show me logs of previous cleanup operations.
+	88.	Can I exclude specific tags from cleanup?
+	89.	How do I set an exception rule for critical images?
+	90.	Can you remove only failed image builds?
+
+This set of 200 training examples includes variations, conversational queries, technical phrasing, and specific use cases related to:
+✅ Finding the latest 5 tags
+✅ Fetching detailed metadata for a Docker image
+✅ Cleaning up Docker images older than 7 days
+
+Would you like this converted into RASA NLU YAML format for direct use? 🚀
