@@ -44,3 +44,73 @@
         chatBox.style.display = "none";
     });
 </script>
+
+
+
+
+
+<div id="chat-icon" style="
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    width: 50px; 
+    height: 50px; 
+    background: url('https://your-icon-url.png') no-repeat center center; 
+    background-size: cover; 
+    cursor: pointer; 
+    border-radius: 50%; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;">
+</div>
+
+<div id="chat-container" style="
+    display: none; 
+    position: fixed; 
+    bottom: 80px; 
+    right: 20px; 
+    width: 300px; 
+    height: 400px; 
+    background: white; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: scale(0); /* Initially hidden */
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 1000;">
+    <div style="display: flex; justify-content: space-between; align-items: center; 
+                background: #0073e6; color: white; padding: 5px 10px; border-radius: 10px 10px 0 0;">
+        <span style="font-weight: bold;">Chat Assistant</span>
+        <button id="chat-close" style="background: transparent; border: none; color: white; font-size: 16px; cursor: pointer;">−</button>
+    </div>
+    <iframe id="chat-iframe" src="https://your-virtual-assistant-url" 
+        width="100%" height="100%" style="border: none;"></iframe>
+</div>
+
+<script>
+    document.getElementById("chat-icon").addEventListener("click", function() {
+        var chatBox = document.getElementById("chat-container");
+        if (chatBox.style.display === "none" || chatBox.style.opacity == "0") {
+            chatBox.style.display = "block";
+            setTimeout(function() {
+                chatBox.style.transform = "scale(1)";
+                chatBox.style.opacity = "1";
+            }, 10);
+        } else {
+            chatBox.style.transform = "scale(0)";
+            chatBox.style.opacity = "0";
+            setTimeout(function() {
+                chatBox.style.display = "none";
+            }, 300);
+        }
+    });
+
+    document.getElementById("chat-close").addEventListener("click", function() {
+        var chatBox = document.getElementById("chat-container");
+        chatBox.style.transform = "scale(0)";
+        chatBox.style.opacity = "0";
+        setTimeout(function() {
+            chatBox.style.display = "none";
+        }, 300);
+    });
+</script>
