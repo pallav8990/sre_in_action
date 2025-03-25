@@ -1,7 +1,7 @@
 <div id="chat-icon" style="
     position: fixed; 
     bottom: 20px; 
-    right: 20px; /* Keep on right side */
+    right: 20px; 
     width: 50px; 
     height: 50px; 
     background: url('https://your-icon-url.png') no-repeat center center; 
@@ -13,10 +13,10 @@
 </div>
 
 <div id="chat-container" style="
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed; 
-    bottom: 80px; /* Position above the icon */
-    right: 20px; /* Align to right */
+    bottom: 20px; /* Aligning bottom with icon */
+    right: 20px; /* Aligning right with icon */
     width: 300px; 
     height: 400px; 
     background: white; 
@@ -24,6 +24,7 @@
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     transform: scale(0); /* Start minimized */
+    transform-origin: bottom right; /* Make it pop from the icon */
     opacity: 0;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     z-index: 1000;">
