@@ -1,105 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Proposal: Moving to a Composite SLO Model for Multi-Cluster Kubernetes</title>
-</head>
-<body>
-    <h1>Proposal: Moving to a Composite SLO Model for Multi-Cluster Kubernetes</h1>
-    
-    <h2>1. Executive Summary</h2>
-    <h3>Current Problem:</h3>
-    <ul>
-        <li>Traditional SLO models track each Kubernetes cluster independently.</li>
-        <li>No unified view of overall platform reliability.</li>
-        <li>Cluster failures trigger isolated SLO breaches, even if workloads are resilient.</li>
-        <li>Difficult to align multiple cluster SLOs with business SLAs.</li>
-    </ul>
-    
-    <h3>Proposed Solution: Composite SLO Model</h3>
-    <ul>
-        <li>Aggregate <strong>SLOs from all clusters</strong> into a <strong>single reliability metric</strong>.</li>
-        <li>Weighted SLO calculation ensures <strong>balanced performance evaluation</strong>.</li>
-        <li>Enables <strong>cross-cluster failover</strong> without immediate SLO breaches.</li>
-        <li>Simplifies <strong>monitoring, reporting, and incident response</strong>.</li>
-    </ul>
-    
-    <h2>2. Limitations of the Traditional SLO Model</h2>
-    <table border="1">
-        <tr><th>Issue</th><th>Impact</th></tr>
-        <tr><td>No Unified Reliability Metric</td><td>Fragmented tracking of availability across multiple clusters.</td></tr>
-        <tr><td>Operational Overhead</td><td>Managing separate SLOs for each cluster is complex.</td></tr>
-        <tr><td>SLO Breaches from Local Failures</td><td>Single cluster failures trigger breaches even when service remains operational.</td></tr>
-        <tr><td>Difficult SLA Alignment</td><td>Customers expect service-level availability, not per-cluster uptime.</td></tr>
-    </table>
-    
-    <h2>3. Benefits of the Composite SLO Model</h2>
-    <table border="1">
-        <tr><th>Advantage</th><th>Business Impact</th></tr>
-        <tr><td>&#9989; Single Unified SLO</td><td>A single metric for reliability across clusters.</td></tr>
-        <tr><td>&#9989; Better SLA Alignment</td><td>Matches customer expectations for service-wide availability.</td></tr>
-        <tr><td>&#9989; Cross-Cluster Failover Resilience</td><td>Shifts workloads between clusters to prevent SLO breaches.</td></tr>
-        <tr><td>&#9989; Operational Efficiency</td><td>Reduces monitoring complexity and improves incident response.</td></tr>
-        <tr><td>&#9989; Multi-Cloud and Hybrid Kubernetes Ready</td><td>Works across AWS, Azure, GCP, and On-Prem clusters.</td></tr>
-    </table>
-    
-    <h2>4. How the Composite SLO Model Works</h2>
-    <p><strong>Weighting Criteria:</strong> Each cluster contributes to the overall SLO based on:</p>
-    <ul>
-        <li><strong>Workload Share</strong> (Traffic handled by each cluster).</li>
-        <li><strong>Cluster Criticality</strong> (Production vs. failover clusters).</li>
-        <li><strong>Historical Reliability</strong> (Past incidents and error budget consumption).</li>
-    </ul>
-    
-    <h3>Formula for Composite SLO:</h3>
-    <pre>
-Composite SLO = ∑ (Cluster SLO × Weight)
-    </pre>
-    
-    <h3>Example Weighting for Three Clusters:</h3>
-    <table border="1">
-        <tr><th>Cluster</th><th>SLO (%)</th><th>Weight (%)</th><th>Weighted SLO Contribution</th></tr>
-        <tr><td>Cluster A (Primary)</td><td>99.95</td><td>50%</td><td>49.98</td></tr>
-        <tr><td>Cluster B (Regional)</td><td>99.90</td><td>30%</td><td>29.97</td></tr>
-        <tr><td>Cluster C (Failover)</td><td>99.85</td><td>20%</td><td>19.97</td></tr>
-        <tr><td><strong>Total Composite SLO</strong></td><td>N/A</td><td><strong>100%</strong></td><td><strong>99.92%</strong></td></tr>
-    </table>
-    
-    <h2>5. Incident Management & Burn Rate Monitoring</h2>
-    <ul>
-        <li>Composite SLO enables <strong>multi-cluster burn rate tracking</strong>.</li>
-        <li><strong>Incident Thresholds:</strong>
-            <ul>
-                <li><strong>Burn Rate ≥ 5 (1 hour window):</strong> Critical incident 🚨</li>
-                <li><strong>Burn Rate ≥ 2 (6 hour window):</strong> Warning ⚠️</li>
-                <li><strong>Burn Rate ≥ 1 (24 hour window):</strong> Monitor trends 📊</li>
-            </ul>
-        </li>
-        <li><strong>Proactive Failover:</strong> If one cluster's burn rate spikes, shift traffic to healthier clusters.</li>
-    </ul>
-
-    <h2>6. Implementation Plan</h2>
-    <h3>Phase 1: Proof of Concept (3 Months)</h3>
-    <ul>
-        <li>Define <strong>initial composite SLO formula</strong>.</li>
-        <li>Implement <strong>Prometheus/Grafana dashboard</strong> for monitoring.</li>
-        <li>Compare <strong>existing vs. composite SLO model</strong>.</li>
-    </ul>
-    
-    <h3>Phase 2: Production Rollout (6 Months)</h3>
-    <ul>
-        <li>Adjust <strong>weighting dynamically</strong> based on real-time workloads.</li>
-        <li>Implement <strong>alerting system for burn rate monitoring</strong>.</li>
-        <li>Train <strong>SRE teams on new incident response process</strong>.</li>
-    </ul>
-    
-    <h2>7. Key Takeaways & Call to Action</h2>
-    <ul>
-        <li><strong>Traditional SLOs are not scalable for multi-cluster Kubernetes.</strong></li>
-        <li><strong>Composite SLOs offer a single, business-aligned reliability metric.</strong></li>
-        <li><strong>Improves incident response and SLA adherence.</strong></li>
-        <li><strong>Next Step:</strong> Proceed with Phase 1 implementation.</li>
-    </ul>
-    <p><strong>Recommendation:</strong> Approve adoption of <strong>Composite SLO Model</strong> for a <strong>trial phase</strong> in multi-cluster Kubernetes environments.</p>
-</body>
-</html>
-
+python3 -c 'import sys, yaml, json
+doc = yaml.safe_load(sys.stdin)
+def decode_strings(obj):
+    if isinstance(obj, str):
+        return bytes(obj, "utf-8").decode("unicode_escape")
+    elif isinstance(obj, dict):
+        return {k: decode_strings(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [decode_strings(i) for i in obj]
+    return obj
+cleaned = decode_strings(doc)
+print(yaml.safe_dump(cleaned, sort_keys=False))' < prom_rules.yaml
