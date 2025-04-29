@@ -1,0 +1,43 @@
+1. Minimal Data Handling
+	•	Only request and process the necessary data from APIs and backends.
+	•	Paginate, filter, and project fields at the source whenever possible (e.g., limit query payloads).
+	•	No heavy data parsing in-memory unless necessary; stream when possible.
+
+2. Efficient API Interactions
+	•	Prefer async HTTP calls (non-blocking) over synchronous wherever applicable.
+	•	Batch multiple API requests when possible instead of individual calls.
+	•	Handle retries gracefully — add exponential backoff to prevent flooding downstream services.
+
+3. Lightweight Processing
+	•	Prefer algorithmic efficiency (O(n) better than O(n^2) when designing data operations).
+	•	Avoid unnecessary loops, recursion, and nested structures in core dataflows.
+
+4. Stateless and Modular Design
+	•	Keep each module stateless unless state is absolutely necessary.
+	•	Separate concerns: Split logic into “Connectors”, “Processors”, “Responders”.
+	•	Loose coupling between modules for easier scaling and debugging.
+
+5. Memory and Resource Optimization
+	•	Avoid loading large objects (e.g., massive API responses) into memory entirely.
+	•	Free up memory after processing if possible (del, garbage collection triggers).
+
+6. Graceful Error Handling
+	•	Always catch and handle exceptions at the boundary level.
+	•	Provide meaningful logs without leaking sensitive data.
+	•	Circuit breaker or fail-fast patterns for non-responsive downstream services.
+
+7. Observability Built-in (Minimal Overhead)
+	•	Embed minimal, non-blocking telemetry (like Prometheus metrics or OpenTelemetry traces).
+	•	Log only essential debug or trace logs during normal operations; avoid verbose logs in mainline flows.
+
+8. Parallelism and Concurrency
+	•	Design workflows that can be parallelized (e.g., fetching different APIs in parallel if independent).
+	•	Utilize asyncio, thread pools, or process pools appropriately based on the workload.
+
+9. Configuration over Hardcoding
+	•	All thresholds, URLs, authentication methods, etc., should be configurable (through .env, config maps, etc.).
+	•	No magic numbers or hardwired connection details.
+
+10. Early Performance Testing and Profiling
+	•	Measure API response times, memory usage, and processing latencies during dev phase itself.
+	•	Perform profiling of critical components using tools like cProfile, PyInstrument, or Prometheus monitoring in dev environments.
