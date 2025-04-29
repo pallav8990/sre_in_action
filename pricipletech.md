@@ -221,3 +221,57 @@
 
   some_function()
   ```
+
+
+# SREHubApp Tools and Libraries Summary
+
+> This document provides the essential tools, libraries, and utilities recommended for implementing caching, live orchestration, optimization, and observability in SREHubApp.
+
+## Core Libraries
+
+| Purpose | Library/Tool | Notes |
+|:---|:---|:---|
+| Async HTTP Calls | `httpx`, `aiohttp` | For fast non-blocking downstream API calls |
+| Retry Mechanism | `tenacity` | Implements exponential backoff retries |
+| Circuit Breaker | `pybreaker` | Protects downstream API systems under stress |
+| Memory Profiling | `memory_profiler` | Analyze memory usage in development |
+| CPU Profiling | `cProfile` | Detect bottlenecks in code execution |
+| Metrics and Observability | `prometheus_client` | Expose basic app metrics to Prometheus |
+| Structured Logging | `structlog` | Maintain structured, parseable logs |
+| Config Management | `python-dotenv`, `PyYAML` | Load environment configs and YAML configs |
+| Caching (Optional) | `redis-py` | Connect and interact with Redis for caching |
+
+## Optional Tools
+
+| Purpose | Tool | Notes |
+|:---|:---|:---|
+| Cache Management | `cachetools` | In-memory TTL cache alternative without Redis |
+| Advanced Telemetry | `OpenTelemetry` | Distributed tracing (if needed later) |
+| Redis Deployment | Redis Helm Chart / Manual YAML | To deploy Redis inside Kubernetes easily |
+| Asynchronous Task Queue (optional future) | `Celery` + Redis | For background tasks if orchestration grows |
+
+## Kubernetes Related
+
+| Purpose | Tool | Notes |
+|:---|:---|:---|
+| Config Management | Kubernetes ConfigMap | Load URLs, tokens, thresholds into the app |
+| Secret Management | Kubernetes Secrets | Handle sensitive credentials securely |
+| Service Discovery | Kubernetes Services | Access Redis or other internal services |
+
+## Development Practices
+
+| Aspect | Recommendation |
+|:---|:---|
+| API Calls | Always async, batched if possible |
+| Retry/Backoff | Use `tenacity` with controlled retry attempts |
+| Profiling | Profile both CPU and Memory during dev cycle |
+| Observability | Minimal, non-blocking metrics export via Prometheus |
+| Configs | Everything through environment or config files (never hardcoded) |
+| Caching Strategy | Read-through caching, TTL of 1-5 minutes for non-critical flows |
+| Database | No database needed initially, add later if you need historical data or audits |
+
+---
+
+# Key Takeaway
+
+> Keep SREHubApp lightweight, stateless, async-first. Use Redis caching only where downstream APIs are heavy or repeated. Extend with database and telemetry tools only if usage grows.
