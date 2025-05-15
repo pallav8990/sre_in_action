@@ -109,7 +109,7 @@ usecase:
 | Unified Query Interface                         | SRE, Ops, Users         | Different query languages for JFrog, OpenShift, ATAAS | One API query fetches normalized data from all tools | Simplifies multi-tool interactions, faster analysis |
 | Scalable & Future-Proof Integration             | Management, SRE         | Custom API integrations needed for every new tool | New tools onboarded with minimal changes via API adapter | Future-proof, seamless integrations, reduces dev effort |
 
-file structure:
+file structure(fastapi):
 srehubapp/
 ├── app.py                            # FastAPI app instance and router inclusion
 ├── pyproject.toml                    # Poetry config
