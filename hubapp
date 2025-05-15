@@ -111,88 +111,93 @@ usecase:
 
 file structure:
 srehubapp/
-├── app.py                             # Flask entrypoint
-├── Jenkinsfile                        # CI: Code review, sonar, unit tests
-├── Dockerfile                         # Used by Tekton pipeline for image build
-├── pyproject.toml                     # Poetry dependency management
+├── app.py                            # FastAPI app instance and router inclusion
+├── pyproject.toml                    # Poetry config
 ├── poetry.lock
-├── setup.py                           # Optional if using mixed tools
-├── .env                               # Local dev configs
-├── .gitignore
+├── Dockerfile                        # Used by Tekton to build and containerize
+├── Jenkinsfile                       # Code analysis, unit tests
 ├── README.md
+├── .env
+├── .gitignore
 
-├── srehubapp/
+├── srehubapp/                        # Main Python package
 │   ├── __init__.py
-│   ├── config.py
+│   ├── config.py                    # Env loaders, settings via Pydantic
 
-│   ├── api/
+│   ├── api/                         # FastAPI routers (one per domain)
 │   │   ├── __init__.py
 │   │   └── v1/
 │   │       ├── __init__.py
-│   │       ├── hvault.py             # /v1/hvault/get-secret
-│   │       └── hub.py                # /v1/hub/insight/<name>
+│   │       ├── hvault.py           # /v1/hvault/get-secret
+│   │       ├── hub.py              # /v1/hub/insight/<name>
+│   │       └── splunk.py           # Example: /v1/splunk/search
 
-│   ├── connectors/
+│   ├── models/                      # Pydantic schemas for requests/responses
 │   │   ├── __init__.py
-│   │   ├── vault.py                  # Vault wrapper
-│   │   ├── ataas.py                  # ATAAS log parser
+│   │   ├── vault.py
+│   │   ├── insights.py
+│   │   └── common.py               # Shared types like Cluster, TimeRange, etc.
+
+│   ├── connectors/                 # Async API wrappers over external systems
+│   │   ├── __init__.py
+│   │   ├── vault.py               # `httpx.AsyncClient` for secrets
+│   │   ├── ataas.py               # Dynamic token from job logs
 │   │   ├── jfrog.py
 │   │   ├── splunk.py
 │   │   └── k8s.py
 
-│   ├── core/
+│   ├── core/                       # Business logic and correlation engine
 │   │   ├── __init__.py
-│   │   ├── base_insight.py          # Abstract base for all insights
-│   │   ├── insight_registry.py      # Plugin registry
+│   │   ├── base_insight.py        # Base class for all insights
+│   │   ├── insight_registry.py    # Plugin-style registry
 │   │   └── insights/
 │   │       ├── __init__.py
+│   │       ├── vault_secret_insight.py
 │   │       ├── image_alert_insight.py
-│   │       └── vault_secret_insight.py
+│   │       └── slo_burnrate_insight.py
 
-│   ├── auth/
+│   ├── auth/                       # SSO or token validation via FastAPI Depends
 │   │   ├── __init__.py
-│   │   ├── sso.py                   # SSO decorator
+│   │   ├── sso.py                 # `get_current_user()` for Depends()
 │   │   └── token_utils.py
 
-│   ├── models/
+│   ├── utils/                      # Stateless helper functions
 │   │   ├── __init__.py
-│   │   ├── cluster.py
-│   │   └── metrics.py
+│   │   ├── logger.py
+│   │   └── timing.py
 
-│   ├── registry/
+│   ├── registry/                   # Optional: dynamic resolver/mapping logic
 │   │   ├── __init__.py
 │   │   └── resolver.py
 
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── logger.py
-│   │   └── timer.py
-
-├── tests/
+├── tests/                          # Async test suite using `pytest-asyncio`
 │   ├── __init__.py
 │   ├── test_api/
 │   │   ├── test_hvault.py
-│   │   └── test_hub.py
+│   │   ├── test_hub.py
 │   ├── test_connectors/
 │   │   ├── test_vault.py
-│   │   ├── test_ataas.py
+│   │   └── test_ataas.py
 │   ├── test_core/
-│   │   ├── test_insight_registry.py
-│   │   └── test_vault_secret_insight.py
+│   │   └── test_insight_registry.py
 │   ├── test_auth/
 │   │   └── test_sso.py
-│   ├── test_utils/
-│   │   └── test_logger.py
+│   └── test_utils/
+│       └── test_logger.py
 
-├── manifests/                         # For ArgoCD deployment
+├── manifests/                      # ArgoCD-compatible K8s manifests
 │   ├── kustomization.yaml
 │   ├── deployment.yaml
 │   ├── service.yaml
-│   ├── route.yaml                     # If OpenShift Route is needed
-│   └── configmap.yaml                 # For .env / app config
+│   ├── route.yaml                 # OpenShift route if needed
+│   └── configmap.yaml
 
-├── tekton/
-│   ├── pipeline.yaml                  # Tekton pipeline definition
-│   ├── build-task.yaml                # Docker build task
-│   ├── deploy-task.yaml               # ArgoCD sync
-│   └── trigger.yaml                   # Git trigger binding
+├── tekton/                         # Tekton CI/CD pipeline files
+│   ├── pipeline.yaml
+│   ├── build-task.yaml
+│   ├── deploy-task.yaml
+│   └── trigger.yaml
+
+
+
+              
