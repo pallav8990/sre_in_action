@@ -108,3 +108,57 @@ usecase:
 | Parallel Execution for High-Performance Queries | SRE, Ops, Users         | Separate API calls create bottlenecks, slow dashboard | API fetches data in parallel, improves response time | Enhances dashboard performance, scales efficiently |
 | Unified Query Interface                         | SRE, Ops, Users         | Different query languages for JFrog, OpenShift, ATAAS | One API query fetches normalized data from all tools | Simplifies multi-tool interactions, faster analysis |
 | Scalable & Future-Proof Integration             | Management, SRE         | Custom API integrations needed for every new tool | New tools onboarded with minimal changes via API adapter | Future-proof, seamless integrations, reduces dev effort |
+
+file structure:
+srehubapp-repo/
+├── app.py                 # Flask app entry point
+├── pyproject.toml         # Poetry config
+├── setup.py               # Compatibility layer (optional with Poetry)
+├── Jenkinsfile            # CI pipeline
+├── .gitignore
+├── .env                   # Secrets/configs for dev
+├── README.md
+├── srehubapp/             # Actual Python package
+│   ├── __init__.py
+│   ├── config.py
+│   ├── api/               # Flask Blueprints or route modules
+│   │   ├── __init__.py
+│   │   └── v1/
+│   │       └── metrics.py
+│   │       └── jobs.py
+│   ├── services/          # Business/correlation logic
+│   │   ├── __init__.py
+│   │   └── correlator.py
+│   │   └── metrics_engine.py
+│   ├── connectors/        # Wrappers over external APIs
+│   │   ├── __init__.py
+│   │   └── jfrog.py
+│   │   └── splunk.py
+│   │   └── k8s.py
+│   │   └── ataas.py
+│   ├── auth/              # SSO decorators and token handling
+│   │   ├── __init__.py
+│   │   └── sso.py
+│   │   └── token_utils.py
+│   ├── models/            # Pydantic/Marshmallow data models
+│   │   ├── __init__.py
+│   │   └── cluster.py
+│   │   └── metrics.py
+│   ├── utils/             # General-purpose helpers
+│   │   ├── __init__.py
+│   │   └── logger.py
+│   │   └── timer.py
+│   └── registry/          # API/connector registry logic
+│       ├── __init__.py
+│       └── resolver.py
+├── tests/                 # Test suite
+│   ├── __init__.py
+│   ├── test_api/
+│   ├── test_services/
+│   ├── test_connectors/
+│   └── test_auth/
+├── docs/                  # Documentation
+│   └── architecture.md
+│   └── api_spec.yaml
+└── data/                  # Example or temp data files
+    └── sample_metrics.json
