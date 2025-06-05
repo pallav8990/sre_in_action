@@ -1,0 +1,32 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  json:
+    format: '{"time": "%(asctime)s", "level": "%(levelname)s", "logger": "%(name)s", "filename": "%(filename)s", "line": %(lineno)d, "message": "%(message)s"}'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: json
+    stream: ext://sys.stdout
+
+  rotating_file:
+    class: logging.handlers.TimedRotatingFileHandler
+    level: DEBUG
+    formatter: json
+    filename: logs/srehubapp.log
+    when: midnight
+    backupCount: 7
+    encoding: utf8
+
+loggers:
+  srehubapp_logger:
+    level: DEBUG
+    handlers: [console, rotating_file]
+    propagate: no
+
+root:
+  level: WARNING
+  handlers: [console]
