@@ -1,0 +1,8 @@
+PING_ISSUER=https://ping.example.com
+PING_CLIENT_ID=your_client_id
+PING_CLIENT_SECRET=your_client_secret
+PING_REDIRECT_URI=https://your.app/auth/callback
+PING_SCOPES=openid profile email offline_access
+PING_TOKEN_AUTH_METHOD=client_secret_basic   # or client_secret_post
+PING_ROLES_CLAIM=roles                      # change if Ping maps roles elsewhere
+SESSION_SECRET=change_me
