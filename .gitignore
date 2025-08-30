@@ -1,0 +1,77 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.pyre/
+.ruff_cache/
+.hypothesis/
+
+# Coverage and test reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+pytestdebug.log
+
+# Packaging and build artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+.python-version
+__pypackages__/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and runtime
+logs/
+*.log
+*.pid
+
+# Environment files and secrets
+.env
+.env.*
+.envrc
+*.env
+*.secret
+*.secrets
+secrets.*
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Optional: Azure Developer CLI local envs
+.azure/
