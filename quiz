@@ -1,0 +1,13 @@
+Across
+	1.	Which container tool is known for running rootless and daemonless? (PODMAN)
+	2.	What Kubernetes package manager uses “charts” to simplify deployments? (HELM)
+	3.	Which monitoring system scrapes metrics and stores them in a time-series database? (PROMETHEUS)
+	4.	Which service mesh project was originally developed by Google and IBM? (ISTIO)
+	5.	What lightweight Kubernetes distribution is popular for edge and IoT use cases? (K3S)
+
+Down
+2. What open-source system automates deployment, scaling, and management of containerized apps? (KUBERNETES)
+4. Which GitOps tool continuously syncs Kubernetes clusters with a Git repository? (ARGOCD)
+6. Which open-source registry provides role-based access and vulnerability scanning? (HARBOR)
+8. What enterprise platform from Red Hat extends Kubernetes with developer and security features? (OPENSHIFT)
+10. Which project uses eBPF for networking, observability, and security in Kubernetes? (CILIUM)
