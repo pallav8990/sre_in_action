@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>SREHubApp Docs</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist/swagger-ui.css" />
+    <style>
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        background: #f7f7f7;
+      }
+      .btn {
+        cursor: pointer;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #fff;
+      }
+      .btn-primary { border-color: #007bff; }
+      .ml-8 { margin-left: 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div><strong>SREHubApp API</strong></div>
+      <div id="auth-buttons">
+        <button id="login" class="btn btn-primary">Authorize</button>
+        <button id="logout" class="btn ml-8" style="display:none;">Logout</button>
+      </div>
+    </div>
+
+    <div id="swagger"></div>
+
+    <script src="https://unpkg.com/swagger-ui-dist/swagger-ui-bundle.js"></script>
+    <script>
+      async function isAuthed() {
+        try {
+          const r = await fetch('/me', { credentials: 'include' });
+          return r.ok;
+        } catch (_) {
+          return false;
+        }
+      }
+
+      async function updateButtons() {
+        const ok = await isAuthed();
+        document.getElementById('login').style.display  = ok ? 'none' : 'inline-block';
+        document.getElementById('logout').style.display = ok ? 'inline-block' : 'none';
+      }
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        // Login button -> go to /auth/login?next=/docs
+        document.getElementById('login').onclick = () => {
+          const next = encodeURIComponent(window.location.pathname + window.location.search);
+          window.location = '/auth/login?next=' + next;
+        };
+        // Logout button -> call /auth/logout
+        document.getElementById('logout').onclick = async () => {
+          await fetch('/auth/logout', { credentials: 'include' });
+          location.reload();
+        };
+
+        // Swagger UI itself
+        SwaggerUIBundle({
+          url: "/openapi.json",
+          dom_id: "#swagger",
+        });
+
+        await updateButtons();
+      });
+    </script>
+  </body>
+</html>
