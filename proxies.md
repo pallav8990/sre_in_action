@@ -299,3 +299,65 @@ async def health():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
+
+
+#========
+"""
+SREHubApp Proxier - a secure, stateless reverse proxy layer
+
+Sample Flow
+-----------
+This demonstrates how a client request moves through SREHubApp’s proxier:
+
+1. **Client Request**
+   - User hits SREHubApp endpoint `/proxy/splunk/services/server/info?pretty=true`
+   - Method: `GET`
+   - Caller includes some headers (but no creds—auth handled by SREHubApp)
+
+2. **SREHubApp Proxier**
+   - Extracts `{connector="splunk"}` and `{path="services/server/info"}`
+   - Looks up connector via `ConnectorRegistry.resolve("splunk")`
+   - Fetches upstream info: `base_url=https://splunk.company.com:8089/`
+   - Injects Splunk bearer token into outbound headers
+   - Filters hop-by-hop + caller auth headers
+   - Adds `X-Forwarded-For`, `traceparent`, etc.
+   - Builds target URL: `https://splunk.company.com:8089/services/server/info?pretty=true`
+   - Streams request to upstream Splunk API
+
+3. **Upstream API Response**
+   - Splunk replies with JSON server info and 200 OK
+
+4. **SREHubApp Proxier Response**
+   - Filters hop-by-hop headers from Splunk’s response
+   - Returns response body + status untouched to client
+   - Client sees exact Splunk JSON, but credentials are never exposed
+
+5. **Logs/Tracing**
+   - Audit log entry: `{user=alice, connector=splunk, path=/services/server/info, status=200, latency_ms=152}`
+   - Trace spans created for request/response with OTel context
+
+Example:
+--------
+Request:
+```http
+GET /proxy/splunk/services/server/info?pretty=true HTTP/1.1
+Host: srehub.company.com
+Authorization: Bearer <PingAccessSSOToken>
+```
+
+Response:
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "serverName": "splunk01.company.com",
+  "version": "9.2.1",
+  "build": "abcdef12345"
+}
+```
+
+---
+"""
+
+# (Code from before remains unchanged; we just added the flow documentation up top)
