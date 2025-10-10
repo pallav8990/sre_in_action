@@ -1,0 +1,42 @@
+token_js = json.dumps(token)
+inject_script = f"""
+<script>
+(function () {{
+  const TOKEN = {token_js};
+  if (!TOKEN) {{
+    console.log('[SREHub] no token in session');
+    return;
+  }}
+
+  // 1) Prove the script really runs early
+  console.log('[SREHub] fetch patch installing, token head:', TOKEN.slice(0,12));
+
+  // 2) Patch window.fetch so EVERY Swagger "try it out" carries the header
+  const _fetch = window.fetch.bind(window);
+  window.fetch = async (input, init = {{}}) => {{
+    try {{
+      const url = typeof input === 'string' ? input : (input && input.url) || '';
+      const isAbsolute = /^https?:\\/\\//i.test(url);
+      const sameOrigin = !isAbsolute || url.startsWith(location.origin);
+      const isOpenApi = url.endsWith('/openapi.json');
+      if (sameOrigin && !isOpenApi) {{
+        // normalize headers (object or Headers)
+        init.headers = init.headers || {{}};
+        if (typeof Headers !== 'undefined' && init.headers instanceof Headers) {{
+          init.headers.set('Authorization', 'Bearer ' + TOKEN);
+        }} else {{
+          init.headers['Authorization'] = 'Bearer ' + TOKEN;
+        }}
+        // prove we touched it
+        console.log('[SREHub] added Authorization to', url);
+      }}
+    }} catch (e) {{
+      console.warn('[SREHub] fetch patch warn:', e);
+    }}
+    return _fetch(input, init);
+  }};
+  console.log('[SREHub] fetch patch installed');
+}})();
+</script>
+"""
+swagger_html = swagger_html.replace("</head>", inject_script + "</head>")
