@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+TICKET=$1
+RAW="/secure/raw/sos-${TICKET}.tar.xz"
+CLEAN_DIR="/secure/cleaned/${TICKET}"
+MAP="/secure/cleaned/${TICKET}/map.json"
+
+mkdir -p "$CLEAN_DIR"
+cp /tmp/sosraw-*.tar.xz "$RAW"
+sha256sum "$RAW" > "$RAW.sha256"
+
+# Run clean (using curated wordlists in /opt/soslists)
+sos clean "$RAW" -o "$CLEAN_DIR" \
+  --users-file /opt/soslists/users.txt \
+  --domains-file /opt/soslists/domains.txt \
+  --keywords-file /opt/soslists/keywords.txt \
+  --map "$MAP" \
+  --audit "$CLEAN_DIR/clean-audit.log"
+
+# Verify no obvious leftovers
+if tar -xJOf "$CLEAN_DIR"/sosreport-*.tar.xz etc/hostname 2>/dev/null | grep -E 'corp\.local|bank\.com'; then
+  echo "Verification failed: leftover domain found" >&2
+  exit 2
+fi
+
+sha256sum "$CLEAN_DIR"/sosreport-*.tar.xz > "$CLEAN_DIR"/cleaned.sha256
+gpg --armor --detach-sign --local-user support-key@bank.com "$CLEAN_DIR"/sosreport-*.tar.xz
+
+echo "Cleaned package ready at $CLEAN_DIR"
