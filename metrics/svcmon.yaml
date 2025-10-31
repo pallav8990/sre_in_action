@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: srehubapp
+  namespace: openshift-monitoring    # or your monitoring ns if using user-workload monitoring
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: srehubapp
+  namespaceSelector:
+    matchNames:
+      - srehubapp-namespace           # <-- your app namespace
+  endpoints:
+    - port: https                     # <-- name of the Service port that maps to your app's 443/8443
+      path: /metrics
+      scheme: https
+      interval: 15s
+      scrapeTimeout: 10s
+      # If you're using a self-signed cert on the pod and passthrough route, either:
+      # A) mount a CA bundle and reference caFile, OR
+      # B) temporarily skip verification (less secure):
+      tlsConfig:
+        insecureSkipVerify: true
+      honorLabels: true
